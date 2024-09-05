@@ -1,0 +1,28 @@
+import { Avatar, Dropdown } from 'antd';
+import { StyledHeader, Title } from './style';
+
+
+const Navbar = () => {
+
+    const userMenu = [
+        {
+            key: "1",
+            label: "Profile"
+        },
+        {
+            key: "2",
+            label: "Logout"
+        }
+    ]
+
+    return (
+        <StyledHeader style={{ backgroundColor: '#f0f2f5' }}>
+            <Title>My Dashboard</Title>
+            <Dropdown menu={{ items: userMenu }} placement="bottomRight">
+                <Avatar size="large" style={{ cursor: 'pointer', backgroundColor: '#1890ff' }} />
+            </Dropdown>
+        </StyledHeader>
+    );
+};
+
+export default Navbar;
