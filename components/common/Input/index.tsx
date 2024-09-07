@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { Input, InputProps, Typography } from 'antd';
-import { Controller } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { InputComponentProps } from './type';
 import { Label, Wrapper } from './style';
 
 
 const InputComponent: FC<InputComponentProps & InputProps> = (props) => {
     const { label, control, name, rules, placeholder, error, ...args } = props;
-
+    const { register } = useForm()
     return (
         <Wrapper>
             <Controller
@@ -17,7 +17,7 @@ const InputComponent: FC<InputComponentProps & InputProps> = (props) => {
                 render={({ field }) => (
                     <>
                         <Label htmlFor={name}>{label}</Label>
-                        <Input {...args} {...field} id={name} placeholder={placeholder} />
+                        <Input {...args} {...field} {...register(name)} id={name} placeholder={placeholder} />
                     </>
                 )}
             />

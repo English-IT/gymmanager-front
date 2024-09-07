@@ -1,11 +1,34 @@
-import React from 'react';
-import {Button} from "antd";
-import {Wrapper} from "./style";
+import React, { FC } from 'react';
+import { Button, ButtonProps } from "antd";
+import { Wrapper } from "./style";
 
-const ButtonComponent = () => {
+interface ButtonComponentProps extends ButtonProps {
+    label: string;
+    customStyle?: React.CSSProperties;
+}
+
+const ButtonComponent: FC<ButtonComponentProps> = ({
+    label,
+    type = 'primary',
+    onClick,
+    disabled = false,
+    size = 'middle',
+    shape,
+    customStyle,
+    ...restProps
+}) => {
     return (
-        <Wrapper>
-            <Button>asd</Button>
+        <Wrapper style={customStyle}>
+            <Button
+                type={type}
+                onClick={onClick}
+                disabled={disabled}
+                size={size}
+                shape={shape}
+                {...restProps}
+            >
+                {label}
+            </Button>
         </Wrapper>
     );
 };
