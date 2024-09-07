@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ColumnsType } from 'antd/es/table';
-import GymTable from '../../components/common/Table';
+import { Table } from '../../components';
 import { message } from 'antd';
 
 interface Member {
@@ -49,7 +49,7 @@ const MembersPage = () => {
     return (
         <div>
             <h1>Gym Members</h1>
-            <GymTable<Member>
+            <Table<Member>
                 columns={columns}
                 data={members}
                 onEdit={handleEdit}

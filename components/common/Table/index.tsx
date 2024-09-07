@@ -26,10 +26,10 @@ const GymTable = <T extends object>({
         key: 'actions',
         render: (text: any, record: T) => (
             <Space size="middle">
-                <Button onClick={() => onEdit && onEdit(record)} type="primary">
+                <Button onClick={() => onEdit && onEdit(record)} type='primary'>
                     Edit
                 </Button>
-                <Button onClick={() => onDelete && onDelete(record)}>
+                <Button onClick={() => onDelete && onDelete(record)} danger>
                     Delete
                 </Button>
             </Space>
