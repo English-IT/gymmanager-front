@@ -9,9 +9,7 @@ type FieldValues = {
 }
 
 const LoginLayout: React.FC = () => {
-
     const { handleSubmit, control } = useForm<FieldValues>();
-
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         console.log(data, "data")
     }
