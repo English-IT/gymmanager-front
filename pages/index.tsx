@@ -1,23 +1,22 @@
+// pages/index.tsx
 import React, { useEffect } from 'react';
-import MainLayout from "../layout/Main";
-import '../styles/globals.css'
 import { useForm } from 'react-hook-form';
-// import LoginLayout from 'layout/Login';
 import MembersPage from '../layout/MembersPage';
+import MainLayout from '../layout/Main'; // Import your MainLayout
 
 const DashboardPage = () => {
     const { control, watch } = useForm();
 
     useEffect(() => {
         console.log(watch());
-    }, [watch('input')])
+    }, [watch('input')]);
 
-    return (
-        <MainLayout>
-            <MembersPage />
-        </MainLayout>
-        // <LoginLayout />
-    );
+    return <div>dashboard</div>;
+};
+
+// Define the custom layout for this page
+DashboardPage.getLayout = function getLayout(page: React.ReactElement) {
+    return <MainLayout>{page}</MainLayout>;
 };
 
 export default DashboardPage;

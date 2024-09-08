@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-import { Input, InputProps, Typography } from 'antd';
-import { Controller, useForm } from 'react-hook-form';
+import { Input } from 'antd';
+import { Controller } from 'react-hook-form';
 import { InputComponentProps } from './type';
 import { Label, Wrapper } from './style';
 
 
-const InputComponent: FC<InputComponentProps & InputProps> = (props) => {
+const InputComponent: FC<InputComponentProps> = (props) => {
     const { label, control, name, rules, placeholder, error, ...args } = props;
-    const { register } = useForm()
+    const isRequired = rules?.required ? true : false;
     return (
         <Wrapper>
             <Controller
@@ -16,8 +16,18 @@ const InputComponent: FC<InputComponentProps & InputProps> = (props) => {
                 rules={rules}
                 render={({ field }) => (
                     <>
-                        <Label htmlFor={name}>{label}</Label>
-                        <Input {...args} {...field} {...register(name)} id={name} placeholder={placeholder} />
+                        <Label htmlFor={name}>{isRequired && <span style={{ color: 'red' }}>* </span>}{label} </Label>
+                        <Input
+                            {...args}
+                            {...field}
+                            id={name}
+
+                            placeholder={placeholder}
+                            style={{
+                                borderColor: error ? 'red' : '',
+                                width: '100%',
+                            }}
+                        />
                     </>
                 )}
             />

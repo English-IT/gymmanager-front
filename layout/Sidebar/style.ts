@@ -4,8 +4,23 @@ import { colours } from "../../constants";
 
 const { Sider } = Layout;
 
+export const Container = styled.div`
+  @media screen and (max-width: 768px) {
+    width: 80px;
+  }
+`;
+
 export const StyledSider = styled(Sider)`
   height: 100vh;
+  transition: width 0.3s ease, left 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    position: fixed !important;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    overflow: auto;
+  }
 `;
 
 export const LogoWrapper = styled.div`
