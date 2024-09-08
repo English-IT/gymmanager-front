@@ -1,7 +1,7 @@
 import { Menu, MenuProps, Button, Layout } from 'antd';
 import { DashboardOutlined, UserOutlined, SettingOutlined, MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { useState, useEffect } from 'react';
-import { Container, Logo, LogoWrapper, StyledSider } from './style';
+import { ButtonWrapper, Container, Logo, LogoWrapper, StyledSider } from './style';
 import Link from 'next/link';
 
 const { Sider } = Layout;
@@ -62,6 +62,7 @@ const Sidebar = () => {
                 collapsible
                 collapsed={collapsed}
                 onCollapse={setCollapsed}
+                collapsedWidth={80}
                 breakpoint="md"
                 trigger={null}
             >
@@ -71,15 +72,13 @@ const Sidebar = () => {
 
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} items={items} />
 
-                {/* Custom trigger placed at the bottom */}
-                <div style={{ position: 'absolute', bottom: 0, width: '100%', textAlign: 'center', padding: '10px' }}>
+                <ButtonWrapper>
                     <Button
-                        type="primary"
                         onClick={() => setCollapsed(!collapsed)}
-                        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                        style={{ border: 'none' }}
+                        icon={collapsed ? <MenuUnfoldOutlined style={{ color: "white" }} /> : <MenuFoldOutlined style={{ color: "white" }} />}
+                        style={{ border: 'none', width: "100%", backgroundColor: "#002140" }}
                     />
-                </div>
+                </ButtonWrapper>
             </StyledSider>
         </Container>
     );

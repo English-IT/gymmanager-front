@@ -34,3 +34,11 @@ export const Logo = styled.h1`
   font-size: 18px;
   margin: 0;
 `;
+
+export const ButtonWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 6px;
+`;

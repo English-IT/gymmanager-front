@@ -6,8 +6,10 @@ import { Label, Wrapper } from './style';
 
 
 const InputComponent: FC<InputComponentProps> = (props) => {
+
     const { label, control, name, rules, placeholder, error, ...args } = props;
     const isRequired = rules?.required ? true : false;
+
     return (
         <Wrapper>
             <Controller
@@ -21,11 +23,9 @@ const InputComponent: FC<InputComponentProps> = (props) => {
                             {...args}
                             {...field}
                             id={name}
-
                             placeholder={placeholder}
                             style={{
-                                borderColor: error ? 'red' : '',
-                                width: '100%',
+                                borderColor: error ? 'red' : "unset"
                             }}
                         />
                     </>

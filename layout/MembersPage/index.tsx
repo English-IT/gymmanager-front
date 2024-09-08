@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { ColumnsType } from 'antd/es/table';
-import { Button, Table } from '../../components';
-import { Select, message } from 'antd';
+import { Button, Table, Select } from '../../components';
+import { message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { AddMemberBtn, FilterDropdownWrapper, MembersPageTopSection } from './style';
 import { useRouter } from 'next/router';
+import { Drawer } from '../../components';
+import { useForm } from 'react-hook-form';
 
 interface Member {
     id: number;
@@ -15,20 +17,26 @@ interface Member {
     membershipType: string;
 }
 
-const { Option } = Select;
 
 const MembersPage = () => {
 
     const [members, setMembers] = useState<Member[]>([
         { id: 1, name: 'John Doe', phone_number: "+998944131514", age: 25, membershipType: "premium", status: 'active' },
-        { id: 2, name: 'Jane Smith', phone_number: "+998944131514", age: 30, membershipType: "premium", status: 'nactive' },
+        { id: 2, name: 'Jane Smith', phone_number: "+998944131514", age: 30, membershipType: "premium", status: 'inactive' },
         { id: 3, name: 'Michael Johnson', phone_number: "+998944131514", age: 27, membershipType: "standard", status: 'active' },
     ]);
 
+    const filterFields = [
+        { label: 'standard', value: 'standard' },
+        { label: 'premium', value: 'premium' },
+        { label: "active", value: "active" },
+        { label: "inactive", value: "inactive" }
+    ]
+
     const [filteredData, setFilteredData] = useState<Member[]>(members);
     const [filterValue, setFilterValue] = useState<string | undefined>(undefined);
-    const router = useRouter()
-
+    const [open, setOpen] = useState<boolean>(false);
+    const { control } = useForm()
     const columns: ColumnsType<Member> = [
         {
             title: 'Phone Number',
@@ -75,20 +83,10 @@ const MembersPage = () => {
         <div>
             <MembersPageTopSection>
                 <h1>Gym Members</h1>
+                <Drawer title="Add new member" open={open} setOpen={setOpen} />
                 <FilterDropdownWrapper>
-                    <Select
-                        placeholder="Filter"
-                        onChange={handleFilterChange}
-                        style={{ width: 120 }}
-                        allowClear
-                        value={filterValue}
-                    >
-                        <Option value="standard">standard</Option>
-                        <Option value="premium">premium</Option>
-                        <Option value="active">active</Option>
-                        <Option value="nactive">nactive</Option>
-                    </Select>
-                    <AddMemberBtn onClick={() => router.push("/add-user")}>
+                    <Select name='filter' control={control} placeholder="Filter" allowClear={true} options={filterFields} onChange={handleFilterChange} />
+                    <AddMemberBtn onClick={() => setOpen(true)}>
                         <PlusOutlined style={{ marginRight: "8px" }} />
                         Add member
                     </AddMemberBtn>

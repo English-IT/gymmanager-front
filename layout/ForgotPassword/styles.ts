@@ -7,4 +7,8 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   padding: 10px 20px;
   margin: 5rem auto;
+
+  h1 {
+    font-weight: medium;
+  }
 `;
