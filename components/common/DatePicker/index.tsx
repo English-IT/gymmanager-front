@@ -1,11 +1,12 @@
 import React, { FC } from "react";
-import { Input } from "antd";
+import { Wrapper, Label } from "./style";
+import { DatePicker } from "antd";
 import { Controller } from "react-hook-form";
-import { InputComponentProps } from "./type";
-import { Label, Wrapper } from "./style";
+import { DatePickerComponentProps } from "./type";
 
-const InputComponent: FC<InputComponentProps> = (props) => {
-  const { label, control, name, rules, placeholder, error, ...args } = props;
+const DatePickerComponent: FC<DatePickerComponentProps> = (props) => {
+  const { label, control, name, rules, placeholder, error, onChange, ...args } =
+    props;
   const isRequired = rules?.required ? true : false;
 
   return (
@@ -20,11 +21,12 @@ const InputComponent: FC<InputComponentProps> = (props) => {
               {isRequired && <span style={{ color: "red" }}>* </span>}
               {label}{" "}
             </Label>
-            <Input
+            <DatePicker
               {...args}
               {...field}
               id={name}
               placeholder={placeholder}
+              onChange={onChange}
               style={{
                 borderColor: error ? "red" : "unset",
               }}
@@ -37,4 +39,4 @@ const InputComponent: FC<InputComponentProps> = (props) => {
   );
 };
 
-export default InputComponent;
+export default DatePickerComponent;

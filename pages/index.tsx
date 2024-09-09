@@ -1,28 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MainLayout from "../layout/Main";
-import "../styles/globals.css";
-import { Input } from "components";
-import { useForm } from "react-hook-form";
-
 const DashboardPage = () => {
-  const { control, watch } = useForm();
+  return <div>dashboard</div>;
+};
 
-  useEffect(() => {
-    console.log(watch());
-  }, [watch("input")]);
-
-  return (
-    <MainLayout>
-      <h1>Dashboard Content</h1>
-      <Input
-        control={control}
-        label="Input"
-        name="input"
-        placeholder="type here..."
-      />
-      {watch("input") ? <p>value: {watch("input")}</p> : null}
-    </MainLayout>
-  );
+DashboardPage.getLayout = function getLayout(page: React.ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default DashboardPage;

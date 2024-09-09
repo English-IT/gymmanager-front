@@ -1,7 +1,7 @@
-import { InputProps } from "antd";
+import { DatePickerProps } from "antd";
 import { Control } from "react-hook-form";
 
-export interface InputComponentProps extends InputProps {
+export interface DatePickerComponentProps extends DatePickerProps {
   label: string;
   name: string;
   control: Control<any>;
