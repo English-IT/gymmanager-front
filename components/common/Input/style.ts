@@ -7,4 +7,5 @@ export const Wrapper = styled.div`
 export const Label = styled.label`
   display: inline-block;
   margin: 10px 0 6px 0;
+  font-weight: 500;
 `;

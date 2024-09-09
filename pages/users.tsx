@@ -1,10 +1,10 @@
 import MembersPage from 'layout/MembersPage'
 import React from 'react'
 
-const members = () => {
+const Users = () => {
     return (
         <MembersPage />
     )
 }
 
-export default members
+export default Users
