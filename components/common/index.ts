@@ -5,3 +5,4 @@ export { default as UserForm } from "./Form";
 export { default as Drawer } from "./Drawer";
 export { default as Select } from "./Select";
 export { default as DatePicker } from "./DatePicker";
+export { default as ConfirmationModal } from "./ConfirmationModal";
