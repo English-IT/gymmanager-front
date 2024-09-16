@@ -4,7 +4,7 @@ import { Controller } from 'react-hook-form'
 import { TimePicker } from 'antd'
 import { TimePickerComponentProps } from './type'
 
-export const TimePickerComponent: React.FC<TimePickerComponentProps> = (props) => {
+const TimePickerComponent: React.FC<TimePickerComponentProps> = (props) => {
 
     const { name, control, error, rules, placeholder, disabled = false } = props
     const timeFormat = 'HH:mm';
@@ -24,3 +24,5 @@ export const TimePickerComponent: React.FC<TimePickerComponentProps> = (props) =
         </Wrapper>
     )
 }
+
+export default TimePickerComponent

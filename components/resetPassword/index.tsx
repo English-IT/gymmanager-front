@@ -11,7 +11,7 @@ const ForgotPasswordLayout = () => {
             <p>Enter your username to reset your password</p>
             <form>
                 <Input control={control} name='username' label='Username' />
-                <Button label='Submit' size='large' customStyle={{ margin: '30px 0' }} />
+                <Button style={{ width: "100%", marginTop: "2rem" }} label='Submit' size='large' />
             </form>
         </Wrapper>
     )

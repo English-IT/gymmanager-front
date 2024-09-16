@@ -1,10 +1,10 @@
 import React from 'react'
-import ForgotPasswordLayout from "../layout/ForgotPassword"
+import { ResetPasword } from 'components'
 
-const ForgotPassword = () => {
+const ResetPaswordPage = () => {
     return (
-        <ForgotPasswordLayout />
+        <ResetPasword />
     )
 }
 
-export default ForgotPassword;
+export default ResetPaswordPage

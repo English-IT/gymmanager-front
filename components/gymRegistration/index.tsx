@@ -1,18 +1,16 @@
 import React from "react";
 import { useForm, Controller, useWatch } from "react-hook-form";
 import { Radio, Checkbox, Row, Col } from "antd";
-import { Input, Button } from "components"
+import { Input, Button, TimePicker } from "components"
 import { FormValues } from "./type";
 import { DefaultValues, weekdaysOptions } from "./json";
 import { TimePickerWrapper, Title, Wrapper } from "./style";
 import { Label } from "components/common/Input/style";
-import { TimePickerComponent } from "components/common/TimePicker";
 
 const GymForm: React.FC = () => {
     const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({ defaultValues: DefaultValues.defaultValues });
 
     const onSubmit = (data: FormValues) => {
-        console.log("submit")
         console.log("Form Data: ", data);
     };
 
@@ -75,14 +73,14 @@ const GymForm: React.FC = () => {
                 <Wrapper>
                     <Label><span style={{ color: 'red' }}>* </span>Weekday Opening and Closing Times</Label>
                     <TimePickerWrapper>
-                        <TimePickerComponent
+                        <TimePicker
                             control={control}
                             name="weekdayOpeningTime"
                             rules={{ required: "Weekday opening time is required" }}
                             error={errors.weekdayOpeningTime}
                             placeholder="Weekday Opening Time"
                         />
-                        <TimePickerComponent
+                        <TimePicker
                             control={control}
                             name="weekdayClosingTime"
                             rules={{ required: "Weekday closing time is required" }}
@@ -94,14 +92,14 @@ const GymForm: React.FC = () => {
                 <Wrapper>
                     <Label style={{ color: isWeekendSelected ? "black" : "#a1a4a2" }}>Weekend Opening and Closing Times</Label>
                     <TimePickerWrapper>
-                        <TimePickerComponent
+                        <TimePicker
                             control={control}
                             name="weekendOpeningTime"
                             error={errors.weekendOpeningTime}
                             placeholder="Weekend Opening Time"
                             disabled={!isWeekendSelected}
                         />
-                        <TimePickerComponent
+                        <TimePicker
                             control={control}
                             name="weekendClosingTime"
                             error={errors.weekendClosingTime}

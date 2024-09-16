@@ -1,19 +1,33 @@
-// pages/_app.tsx
 import { AppProps } from 'next/app';
 import MainLayout from '../layout/Main';
 import { NextPageWithLayout } from '../types.d';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { SessionProvider } from 'next-auth/react'; // next-auth provider
 import '../styles/globals.css';
-import LoginLayout from 'layout/Login';
-import ForgotPasswordLayout from 'layout/ForgotPassword';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => <MainLayout>{page}</MainLayout>);
 
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <SessionProvider session={pageProps.session}>
+      <QueryClientProvider client={queryClient}>
+        {getLayout(<Component {...pageProps} />)}
+      </QueryClientProvider>
+    </SessionProvider>
+  );
 }
 
 export default MyApp;

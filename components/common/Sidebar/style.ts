@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Layout } from "antd";
-import { colours } from "../../constants";
+import { colours } from "../../../constants";
 
 const { Sider } = Layout;
 

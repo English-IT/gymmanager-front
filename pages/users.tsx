@@ -1,10 +1,13 @@
-import MembersPage from 'layout/MembersPage'
 import React from 'react'
+import RoleBasedLayout from 'layout/RoleBasedLayout'
+import { Users } from 'components'
 
-const Users = () => {
+const UsersPage = () => {
     return (
-        <MembersPage />
+        <RoleBasedLayout allowedRoles={['USER']}>
+            <Users />
+        </RoleBasedLayout>
     )
 }
 
-export default Users
+export default UsersPage

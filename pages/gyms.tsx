@@ -1,13 +1,12 @@
-import { GymRegistration } from 'components'
 import RoleBasedLayout from 'layout/RoleBasedLayout'
 import React from 'react'
 
-const GymRegistrationPage = () => {
+const GymsPage = () => {
     return (
         <RoleBasedLayout allowedRoles={['SUPER_ADMIN']}>
-            <GymRegistration />
+            <div>GymsPage list page</div>
         </RoleBasedLayout>
     )
 }
 
-export default GymRegistrationPage
+export default GymsPage

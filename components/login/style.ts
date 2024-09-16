@@ -23,6 +23,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 1240px) {
     flex-direction: column;
+    height: 75vh;
   }
 
   @media screen and (max-width: 850px) {
@@ -95,6 +96,15 @@ export const ContentFormWrapper = styled.form`
   }
 `;
 
+export const InputsWrapper = styled.div`
+  width: 80%;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 850px) {
+    width: 90%;
+  }
+`;
+
 export const ForgetPasswordLink = styled.span`
   text-decoration: none;
   font-weight: bold;
@@ -107,6 +117,7 @@ export const ForgetPasswordLink = styled.span`
 `;
 
 export const LoginButton = styled.button`
+  width: 80%;
   padding: 8px 28px;
   border-radius: 8px;
   cursor: pointer;
@@ -115,5 +126,10 @@ export const LoginButton = styled.button`
   background-size: 800% 800%;
   color: white;
   animation: ${gradientAnimation} 4s ease infinite;
-  margin-top: 24px;
+  margin: 24px 0;
+
+  @media screen and (max-width: 850px) {
+    width: 90%;
+    margin-bottom: 36px;
+  }
 `;

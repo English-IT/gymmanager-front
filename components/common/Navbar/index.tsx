@@ -1,8 +1,14 @@
 import { Avatar, Dropdown } from 'antd';
 import { StyledHeader, Title } from './style';
-
+import { signOut } from 'next-auth/react';
 
 const Navbar = () => {
+
+    const handleSignOut = () => {
+        signOut({
+            callbackUrl: "/login",
+        });
+    };
 
     const userMenu = [
         {
@@ -11,7 +17,8 @@ const Navbar = () => {
         },
         {
             key: "2",
-            label: "Logout"
+            label: "Logout",
+            onClick: (() => handleSignOut())
         }
     ]
 

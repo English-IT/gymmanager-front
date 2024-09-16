@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    gap: 0;
+    gap: 1rem;
   }
 `;
 export const SelectWrapper = styled.div`

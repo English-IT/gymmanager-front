@@ -3,11 +3,11 @@ import { Input } from 'antd';
 import { Controller } from 'react-hook-form';
 import { InputComponentProps } from './type';
 import { Label, Wrapper } from './style';
-
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 
 const InputComponent: FC<InputComponentProps> = (props) => {
 
-    const { label, control, name, rules, placeholder, error, ...args } = props;
+    const { label, control, name, rules, placeholder, type, error, ...args } = props;
     const isRequired = rules?.required ? true : false;
 
     return (
@@ -19,15 +19,31 @@ const InputComponent: FC<InputComponentProps> = (props) => {
                 render={({ field }) => (
                     <>
                         <Label htmlFor={name}>{isRequired && <span style={{ color: 'red' }}>* </span>}{label} </Label>
-                        <Input
-                            {...args}
-                            {...field}
-                            id={name}
-                            placeholder={placeholder}
-                            style={{
-                                borderColor: error ? 'red' : "unset"
-                            }}
-                        />
+                        {type === "password"
+                            ?
+                            <Input.Password
+                                {...args}
+                                {...field}
+                                id={name}
+                                placeholder={placeholder}
+                                style={{
+                                    borderColor: error ? 'red' : "unset",
+                                    width: "100%"
+                                }}
+                                iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                            />
+                            :
+                            <Input
+                                {...args}
+                                {...field}
+                                id={name}
+                                placeholder={placeholder}
+                                style={{
+                                    borderColor: error ? 'red' : "unset",
+                                    width: "100%"
+                                }}
+                            />}
+
                     </>
                 )}
             />

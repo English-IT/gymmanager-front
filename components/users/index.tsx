@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { ColumnsType } from 'antd/es/table';
-import { Button, Table, Select } from '../../components';
-import { message } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import { AddMemberBtn, FilterDropdownWrapper, MembersPageTopSection } from './style';
-import { useRouter } from 'next/router';
-import { Drawer } from '../../components';
 import { useForm } from 'react-hook-form';
+import { message } from 'antd';
+import { ColumnsType } from 'antd/es/table';
+import { PlusOutlined } from '@ant-design/icons';
+import { Drawer, Table, Select } from 'components';
+import { AddMemberBtn, FilterDropdownWrapper, MembersPageTopSection } from './style';
 
 interface Member {
     id: number;
@@ -16,7 +14,6 @@ interface Member {
     status: string;
     membershipType: string;
 }
-
 
 const MembersPage = () => {
 
@@ -80,7 +77,7 @@ const MembersPage = () => {
     };
 
     return (
-        <div>
+        <>
             <MembersPageTopSection>
                 <h1>Gym Members</h1>
                 <Drawer title="Add new member" open={open} setOpen={setOpen} />
@@ -99,7 +96,7 @@ const MembersPage = () => {
                 onDelete={handleDelete}
                 rowKey="id"
             />
-        </div>
+        </>
     );
 };
 

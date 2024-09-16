@@ -7,10 +7,10 @@ import { SelectComponentProps } from './type';
 
 const SelectComponent: FC<SelectComponentProps> = (props) => {
 
-    const { label, name, control, placeholder, options, allowClear, onChange, ...args } = props;
+    const { customStyles, label, name, control, placeholder, options, allowClear, onChange, ...args } = props;
 
     return (
-        <SelectWrapper>
+        <SelectWrapper style={customStyles}>
             <Controller
                 name={name}
                 control={control}

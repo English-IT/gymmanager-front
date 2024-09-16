@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Select } from "antd";
 
 export const MembersPageTopSection = styled.div`
   display: flex;
@@ -25,7 +24,7 @@ export const AddMemberBtn = styled.button`
   border-radius: 8px;
   background-color: #002140;
   color: white;
-  padding: 2px 12px;
+  padding: 4px 12px;
   font-size: 16px;
 
   &:hover {

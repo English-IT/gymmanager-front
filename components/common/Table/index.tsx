@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Button, Space } from 'antd';
-import type { ColumnsType, TableProps } from 'antd/es/table';
+import type { ColumnsType } from 'antd/es/table';
 import ColumnSearch from './ColumnSearch';
 import { SearchOutlined } from '@ant-design/icons';
 import { GymTableProps } from './types';
@@ -34,7 +34,6 @@ const UserTable = <T extends { name?: string }>({
                 : '',
         onFilterDropdownVisibleChange: (visible: boolean) => {
             if (visible) {
-                // We need to call select() on the input element here if you want to focus it
                 setTimeout(() => {
                     const input = document.querySelector('input.ant-input') as HTMLInputElement;
                     if (input) input.focus();
