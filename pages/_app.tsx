@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import MainLayout from '../layout/Main';
 import { NextPageWithLayout } from '../types.d';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { SessionProvider } from 'next-auth/react'; // next-auth provider
+import { SessionProvider } from 'next-auth/react';
 import '../styles/globals.css';
 
 type AppPropsWithLayout = AppProps & {

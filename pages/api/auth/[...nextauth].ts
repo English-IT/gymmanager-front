@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
-import { message } from "antd";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { message } from "antd";
 import { baseURL } from "..";
 
 export default NextAuth({

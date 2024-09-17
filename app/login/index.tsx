@@ -5,7 +5,6 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { message } from 'antd';
 import { Input } from 'components/common';
 import { Container, ContentFormWrapper, ForgetPasswordLink, ImageWrapper, LoginButton, LoginLayoutWrapper, InputsWrapper } from './style';
-import { useState } from 'react';
 
 type FieldValues = {
     phone: string
@@ -16,7 +15,6 @@ const LoginPage = () => {
 
     const router = useRouter();
     const { handleSubmit, control, reset } = useForm<FieldValues>();
-    const [passwordVisible, setPasswordVisible] = useState(false);
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         const result = await signIn('credentials', {

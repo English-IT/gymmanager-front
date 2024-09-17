@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import NoEntryPng from "../assets/Images/no-entry.png"
+import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import { Button } from 'components'
+import NoEntryPng from "../assets/Images/no-entry.png"
 
 const Wrapper = styled.div`
     display: flex;
@@ -16,10 +17,10 @@ const Wrapper = styled.div`
 
 const UnauthorizedPage = () => {
 
+    const router = useRouter()
+
     const handleBackClick = () => {
-        if (typeof window !== "undefined") {
-            window.history.go(-2);
-        }
+        router.push("/")
     }
 
     return (
@@ -32,7 +33,7 @@ const UnauthorizedPage = () => {
                 You tried to access a page you did not have prior
                 authorization for.
             </p>
-            <Button label='Back' style={{ padding: " 1rem 3rem" }} onClick={handleBackClick} />
+            <Button label='Go Home' style={{ padding: " 1rem 3rem" }} onClick={handleBackClick} />
         </Wrapper>
     )
 }
@@ -40,6 +41,5 @@ const UnauthorizedPage = () => {
 UnauthorizedPage.getLayout = function getLayout(page: React.ReactNode) {
     return <>{page}</>;
 };
-
 
 export default UnauthorizedPage

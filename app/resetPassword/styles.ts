@@ -11,8 +11,8 @@ export const Wrapper = styled.div`
 
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2); // Card-like box shadow
-  border: 1px solid #e0e0e0; // Light border for the card
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e0e0e0;
 
   h1 {
     font-size: 1.6rem;

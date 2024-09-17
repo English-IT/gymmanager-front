@@ -1,4 +1,4 @@
-import { GymRegistration } from 'components'
+import { GymRegistration } from 'app'
 import RoleBasedLayout from 'layout/RoleBasedLayout'
 import React from 'react'
 

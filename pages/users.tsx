@@ -1,6 +1,6 @@
 import React from 'react'
 import RoleBasedLayout from 'layout/RoleBasedLayout'
-import { Users } from 'components'
+import { Users } from 'app'
 
 const UsersPage = () => {
     return (

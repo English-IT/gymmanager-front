@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { Menu, Button } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import { ButtonWrapper, Container, Logo, LogoWrapper, StyledSider } from './style';
 import { managerItems, adminItems } from './menuItems';
+import { ButtonWrapper, Container, Logo, LogoWrapper, StyledSider } from './style';
 
 const Sidebar: React.FC = () => {
     const { data: session } = useSession();

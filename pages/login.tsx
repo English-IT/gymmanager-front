@@ -1,10 +1,10 @@
 import React from 'react'
-import { Login } from 'components'
-import { useAuth } from 'hooks/useAuth';
+import { Login } from 'app'
+import { withAuth } from 'hooks/withAuth';
 import LoginLayout from 'layout/LoginLayout';
 
 export const getServerSideProps = async (context: any) => {
-    const result = await useAuth(context, ['SUPER_ADMIN', "USER"]);
+    const result = await withAuth(context, ['SUPER_ADMIN', "USER"]);
 
     if (result.redirect?.destination === '/login') {
         if (context.resolvedUrl === '/login') {

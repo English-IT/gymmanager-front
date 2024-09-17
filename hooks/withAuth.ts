@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/react";
-import { GetServerSidePropsContext } from "next"; // Use this type for context in getServerSideProps
+import { GetServerSidePropsContext } from "next";
 
-export const useAuth = async (
+export const withAuth = async (
   context: GetServerSidePropsContext,
   allowedRoles: string[]
 ) => {

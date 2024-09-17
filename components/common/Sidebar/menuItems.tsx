@@ -17,7 +17,7 @@ export const managerItems: MenuItem[] = [
   {
     key: "2",
     icon: <UserOutlined />,
-    label: <Link href="/users">Users</Link>,
+    label: <Link href="/users">Members</Link>,
   },
   {
     key: "3",

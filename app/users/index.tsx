@@ -59,7 +59,6 @@ const MembersPage = () => {
 
     const handleEdit = (member: Member) => {
         message.info(`Edit member: ${member.name}`);
-        // Here, you can navigate to an edit page or open a modal to edit member details.
     };
 
     const handleDelete = (member: Member) => {

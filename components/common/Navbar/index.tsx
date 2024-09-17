@@ -1,6 +1,6 @@
+import { signOut } from 'next-auth/react';
 import { Avatar, Dropdown } from 'antd';
 import { StyledHeader, Title } from './style';
-import { signOut } from 'next-auth/react';
 
 const Navbar = () => {
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Input } from 'antd';
 import { Controller } from 'react-hook-form';
+import { Input } from 'antd';
 import { InputComponentProps } from './type';
 import { Label, Wrapper } from './style';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
