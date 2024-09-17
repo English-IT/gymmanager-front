@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-    margin-bottom: 16px;
+  width: 100%;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.6rem;
 `;
 
-
 export const Label = styled.label`
-    margin-bottom: 6px;
+  font-weight: 500;
 `;

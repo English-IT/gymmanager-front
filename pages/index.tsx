@@ -1,23 +1,22 @@
-import React, { useEffect } from 'react';
-import MainLayout from "../layout/Main";
-import '../styles/globals.css'
-import { Input } from 'components';
-import { useForm } from 'react-hook-form';
+import { withAuth } from 'hooks/withAuth';
+import React from 'react';
 
-const DashboardPage = () => {
-    const { control, watch } = useForm();
+export const getServerSideProps = async (context: any) => {
+    const result = await withAuth(context, ['SUPER_ADMIN', "USER"]);
 
-    useEffect(() => {
-        console.log(watch());
-    }, [watch('input')])
+    if (result.redirect?.destination === '/login') {
+        if (context.resolvedUrl === '/login') {
+            return { props: {} };
+        }
+    }
 
-    return (
-        <MainLayout>
-            <h1>Dashboard Content</h1>
-            <Input control={control} label='Input' name='input' placeholder='type here...' />
-            {watch('input') ? <p>value: {watch('input')}</p> : null}
-        </MainLayout>
-    );
+    return result;
 };
 
-export default DashboardPage;
+const Home = () => {
+
+    return <div>dashboard</div>;
+};
+
+
+export default Home;

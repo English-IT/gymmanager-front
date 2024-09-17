@@ -3,8 +3,9 @@ import { Layout } from "antd";
 
 const { Content } = Layout;
 
-
-export const LayoutWrapper = styled(Layout)``;
+export const LayoutWrapper = styled(Layout)`
+  min-height: 100vh;
+`;
 
 export const StyledContent = styled(Content)`
   margin: 24px;
