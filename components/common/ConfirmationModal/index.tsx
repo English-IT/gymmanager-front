@@ -3,6 +3,7 @@ import { Wrapper } from "./style";
 import { Modal } from "antd";
 import Button from "../Button";
 import { ConfirmationModalProps } from "./type";
+
 const ConfirmationModal: FC<ConfirmationModalProps> = (props) => {
   const { title, content, btnTitle, okBtnFunc } = props;
   const [open, setOpen] = useState<boolean>(false);
