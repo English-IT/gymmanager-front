@@ -1,6 +1,6 @@
 import type { Dayjs } from "dayjs";
 
-export type FormValues = {
+export interface FormValues {
   gymName: string;
   phoneNumber: string;
   address: string;
@@ -12,4 +12,4 @@ export type FormValues = {
   weekdayClosingTime: Dayjs | null;
   weekendOpeningTime: Dayjs | null;
   weekendClosingTime: Dayjs | null;
-};
+}

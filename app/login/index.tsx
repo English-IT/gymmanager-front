@@ -6,7 +6,7 @@ import { message } from 'antd';
 import { Input } from 'components/common';
 import { Container, ContentFormWrapper, ForgetPasswordLink, ImageWrapper, LoginButton, LoginLayoutWrapper, InputsWrapper } from './style';
 
-type FieldValues = {
+interface FieldValues {
     phone: string
     password: string | number
 }
