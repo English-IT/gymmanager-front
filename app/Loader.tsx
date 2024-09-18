@@ -22,8 +22,6 @@ const Wrapper = styled.div`
     }
 `
 
-
-
 const Loader = () => {
     return (
         <Wrapper>
@@ -32,5 +30,9 @@ const Loader = () => {
         </Wrapper>
     )
 }
+
+Loader.getLayout = function getLayout(page: React.ReactNode) {
+    return <>{page}</>;
+};
 
 export default Loader
