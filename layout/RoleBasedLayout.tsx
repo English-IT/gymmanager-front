@@ -1,3 +1,4 @@
+import { Loader } from "app";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect } from "react";
@@ -25,7 +26,7 @@ const RoleBasedLayout: React.FC<RoleBasedLayoutProps> = ({ children, allowedRole
         return <>{children}</>;
     }
 
-    return <div>Loading...</div>;
+    return <Loader />;
 };
 
 export default RoleBasedLayout;

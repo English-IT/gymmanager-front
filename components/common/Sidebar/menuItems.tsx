@@ -38,6 +38,11 @@ export const adminItems: MenuItem[] = [
     label: <Link href="/gyms">Gyms</Link>,
   },
   {
+    key: "4",
+    icon: <UserOutlined />,
+    label: <Link href="/gym-managers">Gym Managers</Link>,
+  },
+  {
     key: "3",
     icon: <SettingOutlined />,
     label: <Link href="/settings">Settings</Link>,

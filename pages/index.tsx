@@ -1,5 +1,5 @@
-import { withAuth } from "hooks/withAuth";
 import React from "react";
+import { withAuth } from "hooks/withAuth";
 
 export const getServerSideProps = async (context: any) => {
   const result = await withAuth(context, ["SUPER_ADMIN", "USER"]);
