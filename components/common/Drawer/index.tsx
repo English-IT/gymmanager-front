@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Drawer, Space } from 'antd';
-import { UserForm } from "components"
 import { DrawerComponentProps } from './type';
 
-const DrawerComponent: React.FC<DrawerComponentProps> = ({ open, setOpen, title }) => {
+const DrawerComponent: React.FC<DrawerComponentProps> = ({ open, setOpen, title, children }) => {
 
     const onClose = () => {
         setOpen(false);
@@ -23,7 +22,7 @@ const DrawerComponent: React.FC<DrawerComponentProps> = ({ open, setOpen, title 
                     </Space>
                 }
             >
-                <UserForm />
+                {children}
             </Drawer>
         </>
     );

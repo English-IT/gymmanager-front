@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { message } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import { PlusOutlined } from '@ant-design/icons';
-import { Drawer, Table, Select } from 'components';
+import { Drawer, Table, Select, UserForm } from 'components';
 import { AddMemberBtn, FilterDropdownWrapper, MembersPageTopSection } from './style';
 
 interface Member {
@@ -79,7 +79,7 @@ const MembersPage = () => {
         <>
             <MembersPageTopSection>
                 <h1>Gym Members</h1>
-                <Drawer title="Add new member" open={open} setOpen={setOpen} />
+                <Drawer title="Add new member" open={open} setOpen={setOpen} children={<UserForm />} />
                 <FilterDropdownWrapper>
                     <Select name='filter' control={control} placeholder="Filter" allowClear={true} options={filterFields} onChange={handleFilterChange} />
                     <AddMemberBtn onClick={() => setOpen(true)}>

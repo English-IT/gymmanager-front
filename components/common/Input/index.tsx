@@ -31,6 +31,7 @@ const InputComponent: FC<InputComponentProps> = (props) => {
                                     width: "100%"
                                 }}
                                 iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                                autoComplete='false'
                             />
                             :
                             <Input
@@ -42,6 +43,7 @@ const InputComponent: FC<InputComponentProps> = (props) => {
                                     borderColor: error ? 'red' : "unset",
                                     width: "100%"
                                 }}
+                                autoComplete='false'
                             />}
 
                     </>
