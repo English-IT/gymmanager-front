@@ -32,7 +32,7 @@ const UserTable = <T extends { name?: string }>({
             record[dataIndex]
                 ? String(record[dataIndex]).toLowerCase().includes(value.toLowerCase())
                 : '',
-        onFilterDropdownVisibleChange: (visible: boolean) => {
+        onFilterDropdownOpenChange: (visible: boolean) => {
             if (visible) {
                 setTimeout(() => {
                     const input = document.querySelector('input.ant-input') as HTMLInputElement;
