@@ -1,6 +1,7 @@
 import React from 'react'
-import { ResetPasword } from 'app'
+import { Login } from 'app'
 import { withAuth } from 'hooks/withAuth';
+import LoginLayout from 'layout/LoginLayout';
 
 export const getServerSideProps = async (context: any) => {
     const result = await withAuth(context, ['SUPER_ADMIN', "USER"]);
@@ -14,14 +15,14 @@ export const getServerSideProps = async (context: any) => {
     return result;
 };
 
-const ResetPaswordPage = () => {
+const LoginPage = () => {
     return (
-        <ResetPasword />
+        <Login />
     )
 }
 
-ResetPaswordPage.getLayout = function getLayout(page: React.ReactNode) {
-    return <>{page}</>;
+LoginPage.getLayout = function getLayout(page: React.ReactNode) {
+    return <LoginLayout>{page}</LoginLayout>;
 };
 
-export default ResetPaswordPage
+export default LoginPage;

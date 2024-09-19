@@ -1,11 +1,20 @@
+import { withAuth } from "hooks/withAuth";
 import React from "react";
-import MainLayout from "../layout/Main";
-const DashboardPage = () => {
+
+export const getServerSideProps = async (context: any) => {
+  const result = await withAuth(context, ["SUPER_ADMIN", "USER"]);
+
+  if (result.redirect?.destination === "/login") {
+    if (context.resolvedUrl === "/login") {
+      return { props: {} };
+    }
+  }
+
+  return result;
+};
+
+const Home = () => {
   return <div>dashboard</div>;
 };
 
-DashboardPage.getLayout = function getLayout(page: React.ReactElement) {
-  return <MainLayout>{page}</MainLayout>;
-};
-
-export default DashboardPage;
+export default Home;

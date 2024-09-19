@@ -1,16 +1,16 @@
 import React, { FC } from 'react';
-import { Select } from 'antd';
 import { Controller } from 'react-hook-form';
-import { SelectWrapper } from './style';
+import { Select } from 'antd';
 import { Label } from '../Input/style';
 import { SelectComponentProps } from './type';
+import { SelectWrapper } from './style';
 
 const SelectComponent: FC<SelectComponentProps> = (props) => {
 
-    const { label, name, control, placeholder, options, allowClear, onChange, ...args } = props;
+    const { customStyles, label, name, control, placeholder, options, onChange, ...args } = props;
 
     return (
-        <SelectWrapper>
+        <SelectWrapper style={customStyles}>
             <Controller
                 name={name}
                 control={control}

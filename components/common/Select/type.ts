@@ -9,6 +9,7 @@ type SelectOption = {
 export interface SelectComponentProps {
   name: string;
   label?: string;
+  customStyles?: React.CSSProperties;
   control?: Control<any>;
   error?: any;
   placeholder?: string;

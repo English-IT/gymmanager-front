@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { ColumnsType } from "antd/es/table";
-import { Table, Select } from "../../components";
+import { useForm } from "react-hook-form";
 import { message } from "antd";
+import { ColumnsType } from "antd/es/table";
 import { PlusOutlined } from "@ant-design/icons";
+import { Drawer, Table, Select } from "components";
 import {
   AddMemberBtn,
   FilterDropdownWrapper,
   MembersPageTopSection,
 } from "./style";
-import { Drawer } from "../../components";
-import { useForm } from "react-hook-form";
 
 interface Member {
   id: number;
@@ -84,15 +83,12 @@ const MembersPage = () => {
 
   const handleEdit = (member: Member) => {
     message.info(`Edit member: ${member.name}`);
-    // Here, you can navigate to an edit page or open a modal to edit member details.
   };
-
   const handleDelete = (member: Member) => {
     const updatedMembers = members.filter((m) => m.id !== member.id);
     setMembers(updatedMembers);
     message.success(`Deleted member: ${member.name}`);
   };
-
   const handleFilterChange = (value: string) => {
     setFilterValue(value);
     const filtered = members.filter((member) => {
@@ -102,7 +98,7 @@ const MembersPage = () => {
   };
 
   return (
-    <div>
+    <>
       <MembersPageTopSection>
         <h1>Gym Members</h1>
         <Drawer title="Add new member" open={open} setOpen={setOpen} />
@@ -128,7 +124,7 @@ const MembersPage = () => {
         onDelete={handleDelete}
         rowKey="id"
       />
-    </div>
+    </>
   );
 };
 

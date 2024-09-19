@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Layout } from "antd";
-import { colours } from "../../constants";
+import { colours } from "../../../constants";
 
 const { Sider } = Layout;
 
@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const StyledSider = styled(Sider)`
-  height: 100vh;
+  height: 100%;
   transition: width 0.3s ease, left 0.3s ease;
 
   @media screen and (max-width: 768px) {

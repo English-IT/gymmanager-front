@@ -30,8 +30,8 @@ const UserForm: React.FC = () => {
                 <Input control={control} type='number' label='Phone number' name='phone_number' />
                 <Input control={control} type='number' label='Age' name='age' />
                 <Container>
-                    <Select name='membership_type' label="Membership type" control={control} options={membershipOptions} placeholder="standard" />
-                    <Select name="status" label="Status" control={control} options={statusOptions} placeholder="active" />
+                    <Select name='membership_type' label="Membership type" control={control} options={membershipOptions} placeholder="standard" customStyles={{ gap: "10px" }} />
+                    <Select name="status" label="Status" control={control} options={statusOptions} placeholder="active" customStyles={{ gap: "10px" }} />
                 </Container>
             </div>
             <Button label='Submit' style={{ width: "100%", marginBottom: "10px" }} size='large' onClick={handleSubmit(onSubmit)} />

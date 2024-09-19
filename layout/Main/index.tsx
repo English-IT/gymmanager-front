@@ -1,7 +1,6 @@
 import { Layout } from "antd";
 import { ReactNode } from "react";
-import Navbar from "layout/Navbar";
-import Sidebar from "layout/Sidebar";
+import { Sidebar, Navbar } from "components";
 import { LayoutWrapper, StyledContent } from "./style";
 
 type MainLayoutProps = {
